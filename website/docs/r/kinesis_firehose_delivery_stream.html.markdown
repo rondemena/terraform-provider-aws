@@ -6,7 +6,7 @@ description: |-
   Provides a AWS Kinesis Firehose Delivery Stream
 ---
 
-# aws\_kinesis\_firehose\_delivery\_stream
+# aws_kinesis_firehose_delivery_stream
 
 Provides a Kinesis Firehose Delivery Stream resource. Amazon Kinesis Firehose is a fully managed, elastic service to easily deliver real-time data streams to destinations such as Amazon S3 and Amazon Redshift.
 
@@ -298,3 +298,13 @@ The `parameters` array objects support the following:
 * `arn` - The Amazon Resource Name (ARN) specifying the Stream
 
 [1]: https://aws.amazon.com/documentation/firehose/
+
+## Import
+
+Kinesis Firehose Delivery streams can be imported using the stream ARN, e.g.
+
+```
+$ terraform import aws_kinesis_firehose_delivery_stream.foo arn:aws:firehose:us-east-1:XXX:deliverystream/example
+```
+
+Note: Import does not work for stream destination `s3`. Consider using `extended_s3` since `s3` destination is deprecated.
